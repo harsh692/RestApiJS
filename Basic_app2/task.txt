@@ -1,0 +1,22 @@
+REST API - JSON
+
+Get /users - HTML Document Render
+GET /api/users - List all users in JSON 
+
+GET /api/users/1 - Get the user with ID 1
+GET /api/users/2 - Get the user with ID 2
+//Dynamic path parameters
+GET /api/users/:id
+//:id is a variable
+
+POST /users - create new user
+
+PATCH /api/user/1 - Edit the user with Id 1
+
+DELETE /api/users/1 - Delete the user with ID 1
+
+//No database connection therefore hardcoded data taken.
+//mockaroo.com generates fake data for testing purposes.
+
+
+
