@@ -18,5 +18,11 @@ DELETE /api/users/1 - Delete the user with ID 1
 //No database connection therefore hardcoded data taken.
 //mockaroo.com generates fake data for testing purposes.
 
+-------------------------------------------------------------------
+
+Basic_app3 : Using mongodb
+
+
+
 
 

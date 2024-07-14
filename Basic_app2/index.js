@@ -10,6 +10,19 @@ const fs = require('fs');
 app.use(express.urlencoded({extended:false}));
 //whatever form data comes, is converted into proper type(JS object) and given in req.body .
 
+// middlewares
+
+app.use((req,res,next) => {
+    console.log("hello from middleware 1");
+    req.myUserName = "harsh";
+    next();
+})
+
+app.use((req,res,next) => {
+    fs.appendFile("log.txt",`${Date.now()} : ${req.method} : ${req.path}`, (err,data) => {
+    next();
+    });
+})
 
 // routes 
 
@@ -23,6 +36,7 @@ app.get('/users',(req,res) => {
 })
 
 app.get('/api/users',(req,res) => {
+    app.get(res.setHeader("Publisher","harsh gupta")); // setting metadata to the request.
     return res.json(users);
 })
 
